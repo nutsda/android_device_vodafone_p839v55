@@ -21,9 +21,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/vodafone/p839v55/device.mk)
 $(call inherit-product-if-exists, vendor/vodafone/p839v55/p839v55-vendor.mk)
 
+TARGET_BOARD_PLATFORM_VARIANT := msm8916
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_DEVICE := p839v55
-PRODUCT_NAME := cm_p839v55
+PRODUCT_NAME := lineage_p839v55
 PRODUCT_BRAND := Vodafone
 PRODUCT_MODEL := Smart Ultra 6
 PRODUCT_MANUFACTURER := Vodafone
