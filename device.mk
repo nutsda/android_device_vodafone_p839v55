@@ -188,27 +188,6 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_flacdec
 
 # Miscellaneous
-PRODUCT_PACKAGES += \
-    hsic.control.bt.sh \
-    init.ath3k.bt.sh \
-    init.btprop.sh \
-    init.crda.sh \
-    init.qcom.audio.sh \
-    init.qcom.bt.sh \
-    init.qcom.coex.sh \
-    init.qcom.efs.sync.sh \
-    init.qcom.fm.sh \
-    init.qcom.modem_links.sh \
-    init.qcom.wifi.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.sdio.sh \
-    init.qcom.uicc.sh \
-    init.qcom.zram.sh \
-    init.qti.ims.sh \
-    init.wlanprop.sh \
-    qca6234-service.sh \
-    touchscreengesture.sh
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/mmi.cfg:system/etc/mmi.cfg
 
@@ -245,23 +224,16 @@ PRODUCT_BOOT_JARS += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.class_main.sh \
-    init.mdm.sh \
-    init.qcom.bms.sh \
-    init.qcom.class_core.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.sh \
-    init.qcom.syspart_fixup.sh \
-    init.qcom.usb.sh \
-    init.qcom.usb_zte.sh
+    init.qcom.bt.sh \
+    init.qcom.fm.sh \
+    touchscreengesture.sh
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.offcharge.rc \
-    init.qcom.factory.rc \
+    init.qcom.power.rc \
     init.qcom.rc \
+    init.qcom.ssr.rc \
     init.qcom.usb.rc \
-    init.recovery.qcom.rc \
     init.target.rc \
     ueventd.qcom.rc
 
