@@ -1,5 +1,5 @@
 #
-# Copyright 2016 The CyanogenMod Project
+# Copyright 2017 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +14,26 @@
 # limitations under the License.
 #
 
-LOCAL_PATH:= $(call my-dir)
+# This contains the module build definitions for the hardware-specific
+# components for this device.
+#
+# As much as possible, those components should be built unconditionally,
+# with device-specific names to avoid collisions, to avoid device-specific
+# bitrot and build breakages. Building a component unconditionally does
+# *not* include it on all devices, so it is safe even with hardware-specific
+# components.
 
+LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
-LOCAL_C_INCLUDES := $(TARGET_POWERHAL_HEADER_PATH)
+
+ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
+LOCAL_CFLAGS += -DTAP_TO_WAKE_NODE=\"$(TARGET_TAP_TO_WAKE_NODE)\"
+endif
+
+LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_SRC_FILES := power.c
 LOCAL_SHARED_LIBRARIES := liblog libcutils
-LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := power.qcom
+LOCAL_MODULE_TAGS := optional
+
 include $(BUILD_SHARED_LIBRARY)
