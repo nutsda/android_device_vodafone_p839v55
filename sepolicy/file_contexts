@@ -2,7 +2,7 @@
 /persist/.bt_nv.bin				u:object_r:bluetooth_data_file:s0
 /system/etc/init.qcom.bt.sh             	u:object_r:bluetooth_loader_exec:s0
 
-# FRP
+# Partitions
 /dev/block/bootdevice/by-name/config		u:object_r:frp_block_device:s0
 /dev/block/platform/soc.0/7824900.sdhci/by-name/persist		u:object_r:persist_block_device:s0
 
